@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>TwitterClientCredentialsAuth</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Twitter</members>
+        <name>AuthProvider</name>
+    </types>
+    <types>
+        <members>TwitterAuth__mdt.Callback__c</members>
+        <members>TwitterAuth__mdt.NamedCredential__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>TwitterAuth.Twitter</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>TwitterAuth__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>TwitterAuth__mdt-Twitter Auth Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>TwitterAPI</members>
+        <members>TwitterTokenService</members>
+        <name>NamedCredential</name>
+    </types>
+    <version>40.0</version>
+</Package>
