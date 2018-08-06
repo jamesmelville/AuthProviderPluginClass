@@ -31,12 +31,12 @@ public class TwitterClientCredentialsAuth extends Auth.AuthProviderPluginClass {
     
     //handle instantaneous callback and then use named credetial (username and password / client key and secret) to retrieve access token
     public Auth.AuthProviderTokenResponse handleCallback(Map<string,string> authProviderConfiguration, Auth.AuthProviderCallbackState state ) {
-        return new Auth.AuthProviderTokenResponse(authProvider, retriveToken(authProviderConfiguration.get('NamedCredential__c')), tokenType, state.queryParameters.get('state'));
+        return new Auth.AuthProviderTokenResponse(authProvider, retrieveToken(authProviderConfiguration.get('NamedCredential__c')), tokenType, state.queryParameters.get('state'));
     } 
     
     //if access token expired, reuse named credetial 4to retrieve access token
     public override Auth.OAuthRefreshResult refresh(Map<String,String> authProviderConfiguration, String refreshToken) {
-        return new Auth.OAuthRefreshResult(retriveToken(authProviderConfiguration.get('NamedCredential__c')), tokenType);
+        return new Auth.OAuthRefreshResult(retrieveToken(authProviderConfiguration.get('NamedCredential__c')), tokenType);
     }
     
     //return fake username, as client_credential auth is not tied to a specific user
@@ -45,7 +45,7 @@ public class TwitterClientCredentialsAuth extends Auth.AuthProviderPluginClass {
     }
     
     //make HTTP call to token endpoint using client credentials to retrieve access token
-    private String retriveToken(String namedCredential) {
+    private String retrieveToken(String namedCredential) {
         
         HttpRequest req = new HttpRequest();
         
